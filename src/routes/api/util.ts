@@ -136,9 +136,9 @@ export async function uploadCompressed(inputBuffer: Buffer, id: string, minioCli
 }
 
 export async function uploadAvatar(inputBuffer: Buffer, fileName: string, minioClient: any) {
-	const buffer_small = await sharp(inputBuffer).resize(40, 40).webp().toBuffer();
+	const buffer_small = await sharp(inputBuffer, { animated: true }).resize(40, 40).webp().toBuffer();
 
-	const buffer_medium = await sharp(inputBuffer).resize(50, 50).webp().toBuffer();
+	const buffer_medium = await sharp(inputBuffer, { animated: true }).resize(50, 50).webp().toBuffer();
 
 	const buffer_big = await sharp(inputBuffer, { animated: true }).resize(160, 160).webp().toBuffer();
 
