@@ -136,18 +136,29 @@ If you wish to contribute, you are free to do so. Please keep in mind:
 - Don't submit pull requests that rewrite a part of the project. **Please create a GitHub issue and ask if such a rewrite is welcome before starting.**
 
 # License
-This project is licensed under **Attribution-NonCommercial 2.0 International**.
-### You are free to:
-#### 📩✅ Share — copy and redistribute the material in any medium or format
-#### 🔁✅ Adapt — remix, transform, and build upon the material
+This project is licensed under the **GNU AGPL v3** license.
 
-The licensor cannot revoke these freedoms as long as you follow the license terms.
+## Permissions
 
-### Under the following terms:
-#### 👤✅ Attribution — You must give appropriate credit, provide a link to the license, and indicate if changes were made. You may do so in any reasonable manner, but not in any way that suggests the licensor endorses you or your use.
-#### 💵❌ NonCommercial — You may not use the material for commercial purposes.
-#### 📜❌ No additional restrictions — You may not apply legal terms or technological measures that legally restrict others from doing anything the license permits.
+- [x] Commercial use
+- [x] Distribution
+- [x] Modification
+- [x] Patent use
+- [x] Private use
 
-### Please refer to [CC BY-NC 2.0](https://creativecommons.org/licenses/by-nc/2.0/deed.en) for more information.
+## Conditions
+
+- [x] Disclose source
+- [x] License and copyright notice
+- [x] Network use is distribution
+- [x] Same license
+- [x] State changes
+
+## Limitations
+
+- [ ] Liability
+- [ ] Warranty
+
+See the [LICENSE](LICENSE.md) file for more info.
 
 Created by FaceDev
