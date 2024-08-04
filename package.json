@@ -43,6 +43,7 @@
 	"dependencies": {
 		"@fontsource/roboto": "^5.0.13",
 		"@neondatabase/serverless": "^0.9.4",
+		"@signalapp/libsignal-client": "^0.54.1",
 		"@supabase/ssr": "^0.4.0",
 		"@supabase/supabase-js": "^2.44.3",
 		"@sveltejs/adapter-node": "^5.2.0",
