@@ -53,7 +53,7 @@ export const POST: RequestHandler = async ({
 	const imageFile = formData.get('image') as File | null;
 
 	if (typeof content !== 'string' ||
-		content.length > 280 ||
+		content.length > 400 ||
 		(content.trim() == '' && imageFile == null)) {
 		return json({ error: 'Invalid content' }, { status: 400 });
 	}
@@ -77,9 +77,9 @@ export const POST: RequestHandler = async ({
 			const inputBuffer = Buffer.from(buffer);
 
 			if (await isImageNsfw(inputBuffer)) {
-                                 return NSFW_ERROR;
-                        }
-	
+				return NSFW_ERROR;
+			}
+
 			await uploadCompressed(inputBuffer, uniqueLyntId, minioClient);
 			lyntValues.has_image = true;
 		}

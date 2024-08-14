@@ -1,12 +1,12 @@
 <script lang="ts">
-	import { createEventDispatcher } from "svelte";
+	import { createEventDispatcher } from 'svelte';
 
 	export let lynt: string = '';
 	export let placeholder: string = "What's happening?";
-	export let maxLength: number = 280;
+	export let maxLength: number = 400;
 	export let charactersBeforeCount = 0;
 
-	let className: string = "";
+	let className: string = '';
 	let isOverLimit = false;
 
 	$: characterCount = lynt.length;
@@ -15,7 +15,7 @@
 	export { isOverLimit, className as class };
 
 	const dispatch = createEventDispatcher<{
-	        input: Event;
+		input: Event;
 		submit: {};
 		focus: Event;
 	}>();
@@ -25,9 +25,8 @@
 		const text = event.clipboardData?.getData('text/plain') || '';
 		document.execCommand('insertText', false, text);
 	}
-	
+
 	function interfere(event: KeyboardEvent) {
-		
 		if (event.key === 'Enter' && event.shiftKey) {
 			event.preventDefault();
 			dispatch('submit', {});
@@ -48,22 +47,25 @@
 
 <div class="relative {className} !p-0">
 	<div class="relative {className}">
-	<div
-		contenteditable="true"
-		role="textbox"
-		spellcheck="true"
-		tabindex="0"
-		bind:innerText={lynt}
-		{placeholder}
-		class="overflow-wrap-anywhere outline-none"
-		on:paste={handlePaste}
-		on:keydown={interfere}
-		on:input={handleInput}
-		on:focus={handleFocus}
-	/>
+		<div
+			contenteditable="true"
+			role="textbox"
+			spellcheck="true"
+			tabindex="0"
+			bind:innerText={lynt}
+			{placeholder}
+			class="overflow-wrap-anywhere outline-none"
+			on:paste={handlePaste}
+			on:keydown={interfere}
+			on:input={handleInput}
+			on:focus={handleFocus}
+		/>
 	</div>
 	{#if lynt.length > charactersBeforeCount}
-		<div class="absolute bottom-1 right-2 rounded px-1 text-sm bg-secondary/70 rounded-full" class:text-red-500={isOverLimit}>
+		<div
+			class="absolute bottom-1 right-2 rounded rounded-full bg-secondary/70 px-1 text-sm"
+			class:text-red-500={isOverLimit}
+		>
 			{characterCount}/{maxLength}
 		</div>
 	{/if}
